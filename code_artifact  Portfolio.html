@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 | 日系專業個人網站</title>
+
+    <style>
+        /* 共用變數與基礎設定 */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #333333;
+            --text-muted: #888888;
+            --accent-color: #A0A595;
+            --border-color: #EBEBEB;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', 'Arial', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.8;
+            letter-spacing: 0.08em;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-main);
+            letter-spacing: 0.15em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text-main);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* 作品集網格樣式 */
+        .container {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 60px;
+            letter-spacing: 0.15em;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 預設雙欄排列 */
+            gap: 40px;
+        }
+
+        /* 單個作品卡片樣式 */
+        .work-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            group: work;
+            /* 用於Hover狀態連動 */
+        }
+
+        .work-img-wrapper {
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            background-color: #EEEEEE;
+            aspect-ratio: 4/3;
+        }
+
+        .work-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            /* 圖片放大動畫 */
+        }
+
+        .work-item:hover .work-img-wrapper img {
+            transform: scale(1.05);
+            /* 滑鼠懸浮時圖片微放大 */
+        }
+
+        .work-info h3 {
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .work-item:hover .work-info h3 {
+            color: var(--accent-color);
+            /* 滑鼠懸浮時標題變色 */
+        }
+
+        .work-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 手機版響應式設計：改為單欄排列 */
+        @media (max-width: 768px) {
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PORTFOLIO.</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="works.html" class="active">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title"> Ai Selected Works</h1>
+
+        <div class="works-grid">
+            <!-- 作品 1 -->
+            <a href="#" class="work-item">
+                <div class="work-img-wrapper">
+                    <img src="./images/003.jpg" alt="專案 1">
+                </div>
+                <div class="work-info">
+                    <h3>無印風電商平台設計</h3>
+                    <p>Web Design / UI Development</p>
+                </div>
+            </a>
+
+            <!-- 作品 2 -->
+            <a href="#" class="work-item">
+                <div class="work-img-wrapper">
+                    <img src="./images/004.jpg" alt="專案 2">
+                </div>
+                <div class="work-info">
+                    <h3>文青咖啡館官方網站</h3>
+                    <p>Branding / Web Design</p>
+                </div>
+            </a>
+
+            <!-- 作品 3 -->
+            <a href="#" class="work-item">
+                <div class="work-img-wrapper">
+                    <img src="./images/005.jpg" alt="專案 3">
+                </div>
+                <div class="work-info">
+                    <h3>獨立雜誌排版設計</h3>
+                    <p>Editorial Design</p>
+                </div>
+            </a>
+
+            <!-- 作品 4 -->
+            <a href="#" class="work-item">
+                <div class="work-img-wrapper">
+                    <img src="./images/006.jpg" alt="專案 4">
+                </div>
+                <div class="work-info">
+                    <h3>個人攝影集展示網</h3>
+                    <p>Web Development</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Kenichi Sato. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>

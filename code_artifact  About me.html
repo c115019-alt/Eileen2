@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我 | 日系專業個人網站</title>
+
+    <style>
+        /* 共用變數與基礎設定 */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #333333;
+            --text-muted: #888888;
+            --accent-color: #A0A595;
+            --border-color: #EBEBEB;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', 'Arial', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.8;
+            letter-spacing: 0.08em;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-main);
+            letter-spacing: 0.15em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text-main);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* 關於我區塊特定樣式 */
+        .container {
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* 左側圖片區塊 */
+        .profile-img {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            /* 輕柔的陰影增加專業感 */
+            object-fit: cover;
+            aspect-ratio: 3/4;
+            /* 設定優雅的長寬比 */
+        }
+
+        /* 右側文字區塊 */
+        .profile-text {
+            flex: 1.2;
+        }
+
+        .profile-text h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .profile-text p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hobbies {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hobbies li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .hobbies li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        /* 手機版響應式設計 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hobbies li {
+                text-align: left;
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PORTFOLIO.</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="works.html">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="profile-img">
+            <!-- 佔位圖片，可替換為真實照片 -->
+            <img src="./images/007.jpg" alt="個人照片">
+        </div>
+        <div class="profile-text">
+            <h1>邱正偉</h1>
+            <p>
+                你好，我是一名熱愛簡約設計的網頁設計師。<br>
+                喜歡安靜的午後、溫暖的陽光與文字，也熱愛手作烘焙，享受製作餅乾時的幸福時光。身為幼稚園老師，喜歡孩子們純真的笑容，也樂於探索新事物。目前正在學習網頁設計與AI創作，希望將創意融入生活，用簡單語法打造日系無印風格的個人空間。相信生活中的美好來自細節，期許自己保持初心、溫柔與熱情，在學習中慢慢成長，創造屬於自己的精彩故事。
+            </p>
+
+            <div class="section-title">My Hobbies</div>
+            <ul class="hobbies">
+                <li>底片攝影：捕捉日常的光影變化</li>
+                <li>晨間祈禱：享受早晨寧靜的儀式感</li>
+                <li>極簡主義：持續學習如何減少生活中的雜訊</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Kenichi Sato. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>

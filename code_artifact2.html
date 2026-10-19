@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專業日系個人網站</title>
+    <style>
+        :root {
+            /* 日系專業感色彩計畫 */
+            --bg-color: #FBFBF9;
+            /* 象牙白背景 */
+            --text-main: #333333;
+            /* 深灰主文字 */
+            --text-light: #7A7A7A;
+            /* 淺灰次要文字 */
+            --accent-color: #4B5E7C;
+            /* 沉穩的藍灰色作為點綴 */
+            --border-color: #E6E6E6;
+            /* 柔和的邊框色 */
+        }
+
+        /* 重置預設樣式並啟用平滑滾動 */
+        html {
+            scroll-behavior: smooth;
+            /* 點擊導覽列時會平滑滑動 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.8;
+            letter-spacing: 0.08em;
+            /* 增加字距提升質感 */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(251, 251, 249, 0.95);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 0.15em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        section {
+            min-height: 100vh;
+            /* 每個區塊至少一個螢幕高，營造分頁感 */
+            padding: 120px 20px 60px 20px;
+            /* 頂部留空間給固定的導覽列 */
+            box-sizing: border-box;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: normal;
+            margin-bottom: 60px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(20%);
+            /* 微微降低飽和度，增加專業感 */
+        }
+
+        .about-text {
+            flex: 1.5;
+        }
+
+        .about-text h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 500;
+        }
+
+        .about-text h2 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            font-weight: normal;
+            margin: 0 0 30px 0;
+            letter-spacing: 0.2em;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .work-card {
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            background-color: #FFFFFF;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .work-year {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .work-title {
+            font-size: 1.2rem;
+            margin: 0 0 15px 0;
+            font-weight: 500;
+        }
+
+        .work-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            padding-bottom: 5px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .social-links a:hover {
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav ul li {
+                font-size: 0.8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .about-image {
+                text-align: center;
+            }
+
+            .about-text h1 {
+                font-size: 2rem;
+            }
+
+            .about-text p {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">PORTFOLIO.</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="./images/001.jpg" alt="個人肖像">
+            </div>
+            <div class="about-text">
+                <h1>邱正偉</h1>
+                <h2>UI/UX DESIGNER & DEVELOPER</h2>
+                <p>你好，我是一名專注於數位產品設計的設計師與開發者。我崇尚極簡、直覺的設計語彙，並相信良好的設計能夠在無形中解決複雜的問題。</p>
+                <p>目前致力於網頁介面設計與前端開發，擅長將繁雜的資訊轉化為乾淨、優雅且具備高實用性的使用者體驗。期待能透過程式與設計，創造出具備溫度的數位作品。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 class="section-title">Professional Works</h2>
+        <div class="works-grid">
+
+            <div class="work-card">
+                <div class="work-year">2024 - Present</div>
+                <h3 class="work-title">自由接案網頁設計師</h3>
+                <p class="work-desc">協助在地品牌建立數位形象，包辦從品牌視覺規劃、UI設計到前端網頁切版的完整流程。專注於日系極簡風格與響應式網頁設計。</p>
+            </div>
+
+            <div class="work-card">
+                <div class="work-year">2022 - 2024</div>
+                <h3 class="work-title">數位代理商 前端助理</h3>
+                <p class="work-desc">參與多個企業形象網站專案，負責 HTML/CSS 網頁架構撰寫，與設計師密切合作，確保最終成品完美還原設計稿細節。</p>
+            </div>
+
+            <div class="work-card">
+                <div class="work-year">2021</div>
+                <h3 class="work-title">極簡生活個人部落格</h3>
+                <p class="work-desc">從零開始規劃的個人專案，探討極簡主義與生活美學。該網站完全手寫原生程式碼，並獲得每月超過一萬次的穩定瀏覽量。</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-content">
+            <p style="color: var(--text-light);">如果有任何專案合作機會，或只是想交流設計心得，都非常歡迎隨時與我聯繫。</p>
+
+            <div class="contact-info">
+                <p>hello@yourdomain.com</p>
+                <p>+886 912-345-678</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#">Behance</a>
+                <a href="#">GitHub</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Wang Xiao Ming. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>

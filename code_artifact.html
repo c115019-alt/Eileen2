@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人簡介</title>
+    <style>
+        body {
+            background-color: #F9F8F6;
+            /* 溫和的日系米白色背景 */
+            color: #4A4A4A;
+            /* 柔和的深灰色文字，看起來不刺眼 */
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft JhengHei', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* 讓內容在螢幕正中間 */
+            margin: 0;
+            line-height: 1.8;
+            /* 增加行距，讓閱讀更舒適 */
+            letter-spacing: 1.5px;
+            /* 增加字距，帶出日系空氣感 */
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            width: 90%;
+            max-width: 420px;
+            padding: 50px 40px;
+            border: 1px solid #EBEBEB;
+            /* 極細的邊框代替強烈的陰影 */
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            /* 非常微弱的陰影增加一點點層次 */
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            /* 變成圓形 */
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: normal;
+            /* 取消粗體，看起來更輕柔 */
+            margin: 0 0 10px 0;
+            color: #333333;
+            letter-spacing: 2px;
+        }
+
+        .divider {
+            width: 30px;
+            height: 2px;
+            background-color: #D3C3B3;
+            /* 日系大地色分隔線 */
+            margin: 15px auto 25px auto;
+            /* 讓線條置中並留出上下空間 */
+        }
+
+        .description {
+            font-size: 14px;
+            text-align: left;
+            /* 內文靠左看起來比較整齊 */
+            margin-bottom: 40px;
+            color: #666666;
+        }
+
+        .hobbies {
+            text-align: left;
+        }
+
+        .hobbies h2 {
+            font-size: 12px;
+            font-weight: normal;
+            color: #999999;
+            border-bottom: 1px solid #EEEEEE;
+            /* 下底線 */
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            /* 英文轉大寫 */
+            letter-spacing: 3px;
+        }
+
+        .hobbies ul {
+            list-style-type: none;
+            /* 移除預設的黑色大圓點 */
+            padding: 0;
+            margin: 0;
+        }
+
+        .hobbies li {
+            font-size: 14px;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #555555;
+        }
+
+        /* 客製化興趣列表前面的小點點 */
+        .hobbies li::before {
+            content: "・";
+            position: absolute;
+            left: 0;
+            color: #D3C3B3;
+            /* 與分隔線同色 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <!-- 圖片 -->
+        <img src="./images/009.jpg">
+
+        <!-- 姓名 -->
+        <h1>邱正偉</h1>
+
+        <!-- 分隔線 -->
+        <div class="divider"></div>
+
+        <!-- 簡介 -->
+        <p class="description">
+            你好，我是邱正偉。<br>
+            喜歡安靜的午後，享受陽光灑落窗邊的溫暖，也喜歡透過文字記錄生活中的美好。目前正在學習網頁設計，希望用簡單的語法，打造充滿日系無印風格的個人空間。喜歡自然、簡約與純粹的設計，相信美好藏在每個細節裡。雖然還是初學者，但願意一步步探索與成長，保持初心與熱情，讓每一次練習都成為美好的收穫。
+        </p>
+
+        <!-- 興趣區塊 -->
+        <div class="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+                <li>閱讀課外書籍</li>
+                <li>游泳</li>
+                <li>戲劇</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

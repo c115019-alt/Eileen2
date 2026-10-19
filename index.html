@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首頁 | 日系專業個人網站</title>
+
+    <style>
+        /* 全域變數定義日系色彩 */
+        :root {
+            --bg-color: #FAFAFA;
+            --text-main: #333333;
+            --text-muted: #888888;
+            --accent-color: #A0A595;
+            /* 柔和的鼠尾草綠 */
+            --border-color: #EBEBEB;
+        }
+
+        /* 基礎重置與字體設定 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', 'Arial', 'Microsoft JhengHei', sans-serif;
+            line-height: 1.8;
+            letter-spacing: 0.08em;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 導覽列樣式 */
+        header {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-main);
+            letter-spacing: 0.15em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text-main);
+        }
+
+        /* 導覽列底線動畫特效 */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* 首頁主要視覺區塊 */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 0.2em;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        /* 頁腳樣式 */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PORTFOLIO.</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="works.html">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>邱正偉</h1>
+        <p>喜歡安靜的午後、溫暖的陽光與文字，也熱愛手作烘焙，享受製作餅乾時的幸福時光。身為幼稚園老師，喜歡孩子們純真的笑容，也樂於探索新事物。目前正在學習網頁設計與AI創作，希望將創意融入生活，用簡單語法打造日系無印風格的個人空間。相信生活中的美好來自細節，期許自己保持初心、溫柔與熱情，在學習中慢慢成長，創造屬於自己的精彩故事。<br>相信設計的力量能讓生活更加美好。
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2026 Kenichi Sato. All Rights Reserved.
+    </footer>
+
+</body>
+
+</html>
